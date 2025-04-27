@@ -18,7 +18,7 @@ An end-to-end machine learning system that predicts apartment prices in Egypt wi
 **Data Pipeline:**
 1. **Web Scraping**: Collected 50K+ listings using `BeautifulSoup` and `Selenium`
 2. **ETL**: Processed raw data via SSIS packages into SQL Server  
-   ![ETL Package](https://github.com/HossamElsrah/AI_NeuroRealtor/blob/main/Project%20Photos/ETL%20Package.png)
+   ![ETL Package](https://github.com/HossamElsrah/AI-NeuroRealtor/blob/main/Project%20Photos/Etl%20Package.png)
 3. **Feature Engineering**: Extracted 10+ key features from Arabic text descriptions
 4. **Modeling**: Optimized XGBoost achieves **R²=0.80** on test data
 5. **Deployment**: Production-ready API built with FastAPI
