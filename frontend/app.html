@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>توقع سعر العقار</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            max-width: 900px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: #34495e;
+        }
+
+        .btn-primary {
+            background-color: #3498db;
+            border: none;
+            padding: 12px 30px;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .alert {
+            margin-top: 20px;
+        }
+
+        pre {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>مرحبا بك في سمسار بالذكاء الاصطناعى</h1>
+        <p class="text-center text-muted mb-4">املأ البيانات التالية للحصول على توقع لسعر العقار</p>
+
+        <form id="predictionForm" class="row g-3">
+            <div class="col-md-6">
+                <label for="Area" class="form-label">المساحة (م²)</label>
+                <input type="number" id="Area" name="Area" class="form-control" required min="20" step="0.1"
+                    value="130">
+            </div>
+
+            <div class="col-md-6">
+                <label for="Type" class="form-label">نوع العقار</label>
+                <select id="Type" name="Type" class="form-select" required>
+                    <option value="apartment">شقة</option>
+                    <option value="duplex">دوبلكس</option>
+                    <option value="roof">روف</option>
+                    <option value="studio">ستوديو</option>
+                </select>
+            </div>
+
+            <div class="col-md-6">
+                <label for="Rooms" class="form-label">عدد الغرف</label>
+                <input type="number" id="Rooms" name="Rooms" class="form-control" required min="1" value="3">
+            </div>
+
+            <div class="col-md-6">
+                <label for="Bathrooms" class="form-label">عدد الحمامات</label>
+                <input type="number" id="Bathrooms" name="Bathrooms" class="form-control" required min="1" value="2">
+            </div>
+
+            <div class="col-md-6">
+                <label for="Furnished" class="form-label">مفروشة</label>
+                <select id="Furnished" name="Furnished" class="form-select" required>
+                    <option value="1">نعم</option>
+                    <option value="0" selected>لا</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="Finished" class="form-label">تشطيب</label>
+                <select id="Finished" name="Finished" class="form-select" required>
+                    <option value="1">نعم</option>
+                    <option value="0" selected>لا</option>
+                </select>
+            </div>
+
+            <div class="col-md-6">
+                <label for="Feature" class="form-label">المميزات</label>
+                <select id="Feature" name="Feature" class="form-select" required>
+                    <option value="ملياش ميزة">بدون مميزات</option>
+                    <option value="ساحلي">ساحلية</option>
+                    <option value="حديقة">حديقة</option>
+                    <option value="مدينة">مدينة</option>
+                    <option value="شارع عادي">شارع عادي</option>
+                    <option value="شارع رئيسي">شارع رئيسي</option>
+                    <option value="قرية">قرية</option>
+                    <option value="العاصمة الإدارية">العاصمة الإدارية</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="City" class="form-label">المدينة</label>
+                <select id="City" name="City" class="form-select" required>
+                    <option value="القاهرة">القاهرة</option>
+                    <option value="الاسكندرية">الإسكندرية</option>
+                    <option value="شرم الشيخ">شرم الشيخ</option>
+                    <option value="الدقهلية">الدقهلية</option>
+                    <option value="دمياط">دمياط</option>
+                    <option value="الفيوم">الفيوم</option>
+                    <option value="العين السخنة">العين السخنة</option>
+                    <option value="الغردقة">الغردقة</option>
+                    <option value="الساحل الشمالي">الساحل الشمالي</option>
+                    <option value="المنوفية">المنوفية</option>
+                    <option value="أسيوط">أسيوط</option>
+                    <option value="المنيا">المنيا</option>
+                    <option value="مرسى مطروح">مرسى مطروح</option>
+                    <option value="الاسماعيلية">الاسماعيلية</option>
+                    <option value="راس سدر">راس سدر</option>
+                    <option value="الغربية">الغربية</option>
+                    <option value="الشرقية">الشرقية</option>
+                    <option value="جنوب سيناء">جنوب سيناء</option>
+                    <option value="بور سعيد">بور سعيد</option>
+                    <option value="كفر الشيخ">كفر الشيخ</option>
+                    <option value="البحيرة">البحيرة</option>
+                </select>
+            </div>
+
+            <div class="col-md-12">
+                <label for="District" class="form-label">الحي/المنطقة</label>
+                <input type="text" id="District" name="District" class="form-control" required value="المعادي">
+            </div>
+
+            <div class="col-12 text-center mt-4">
+                <button type="button" onclick="submitForm()" class="btn btn-primary btn-lg">توقع السعر</button>
+            </div>
+        </form>
+
+        <div class="output mt-5 text-center" id="output"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        async function submitForm() {
+            const form = document.getElementById('predictionForm');
+            const formData = new FormData(form);
+            const data = {};
+
+            formData.forEach((value, key) => {
+                if (!isNaN(Number(value))) {
+                    data[key] = parseFloat(value);
+                } else {
+                    data[key] = value;
+                }
+            });
+
+            try {
+                const response = await fetch("https://946c4c2a-a4b0-4319-9a5d-ac63bd09a833-00-31p5fe2m5dv7r.worf.replit.dev/predict/", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    console.log("الاستجابة الكاملة:", result);
+
+                    const priceKey = Object.keys(result).find(key => key.includes("السعر") || key.includes("price"));
+
+                    if (priceKey) {
+                        document.getElementById("output").innerHTML =
+                            `<div class="alert alert-success" style="font-size: 1.2rem;">
+                        <h4 class="alert-heading">نتيجة التوقع</h4>
+                        <hr>
+                        <p class="mb-0">${result[priceKey]}</p>
+                    </div>`;
+                    } else {
+                        document.getElementById("output").innerHTML =
+                            `<div class="alert alert-warning">
+                        <h4>تحذير</h4>
+                        <p>لم يتم العثور على سعر في الاستجابة. الاستجابة الكاملة:</p>
+                        <pre>${JSON.stringify(result, null, 2)}</pre>
+                    </div>`;
+                    }
+                } else {
+                    const error = await response.json();
+                    document.getElementById("output").innerHTML =
+                        `<div class="alert alert-danger">
+                    <h4>خطأ في الاستجابة</h4>
+                    <p>${error.detail || 'حدث خطأ غير متوقع'}</p>
+                </div>`;
+                }
+            } catch (err) {
+                document.getElementById("output").innerHTML =
+                    `<div class="alert alert-danger">
+                <h4>خطأ في الاتصال</h4>
+                <p>${err.message}</p>
+                <p>تأكد من:</p>
+                <ul>
+                    <li>تشغيل الخادم</li>
+                    <li>صحة عنوان URL</li>
+                    <li>عدم وجود مشاكل في الشبكة</li>
+                </ul>
+            </div>`;
+                console.error("Error details:", err);
+            }
+        }
+    </script>
+</body>
+
+</html>
