@@ -19,8 +19,8 @@ app.add_middleware(
 )
 
 # Load The Preprocessor & Model
-preprocessor = joblib.load('api/ml_model/preprocessor.joblib')
-model = joblib.load('api/ml_model/xgboost_model.joblib')
+preprocessor = joblib.load('preprocessor.joblib')
+model = joblib.load('xgboost_model.joblib')
 
 # log transformation Inverse for Price Predicition
 def inverse_log_transform(x):
