@@ -28,7 +28,7 @@ An end-to-end machine learning system that predicts apartment prices in Egypt wi
 
 ## 🖥️ Web Interface
 The user-friendly frontend allows seamless interaction with the AI model:
-![Web Interface](https://github.com/HossamElsrah/AI_NeuroRealtor/blob/main/Project%20Photos/Web%20Site.png)
+![Web Interface](https://github.com/HossamElsrah/AI-NeuroRealtor/blob/main/Project%20Photos/Web%20Site.png)
 
 ## 🛠️ Technical Stack
 
