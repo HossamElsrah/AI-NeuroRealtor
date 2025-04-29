@@ -5,7 +5,7 @@
 ![Data](https://img.shields.io/badge/Data-50K%2B%20listings-brightgreen)
 ![Frontend](https://img.shields.io/badge/Frontend-HTML%2FCSS%2FJS-yellowgreen)
 
-An end-to-end machine learning system that predicts apartment prices in Egypt with **80%+ accuracy**, functioning as an AI-powered real estate broker.
+An end-to-end machine learning system that predicts apartment prices in Egypt, functioning as an AI-powered real estate broker.
 
 ## 🔍 Project Overview
 
