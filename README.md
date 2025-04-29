@@ -102,9 +102,9 @@ curl -X POST "http://api/predict" \
 ### Model Performance
 | Model          | Train R² | Test R² | RMSE    |
 |----------------|----------|---------|---------|
-| XGBoost        | 0.97     | 0.80    | 0.38    |
-| RandomForest   | 0.95     | 0.78    | 0.42    |
+| XGBoost        | 0.97     | 0.81    | 0.38    |
 | KNN            | 0.88     | 0.72    | 0.51    |
+| RandomForest   | 0.95     | 0.78    | 0.42    |
 
 ## 📂 Repository Structure
 ```
@@ -112,7 +112,7 @@ curl -X POST "http://api/predict" \
 │   ├── app.py               # FastAPI endpoints
 │   └── ml_model/            # Serialized models
 ├── notebooks/
-│   └── Analysis.ipynb       # EDA & modeling
+│   └── ml_process.ipynb     # EDA & modeling
 ├── web/                     # Frontend interface
 └── README.md
 ```
